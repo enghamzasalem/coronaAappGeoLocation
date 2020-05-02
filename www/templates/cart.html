@@ -1,0 +1,52 @@
+<ion-view view-title="Shopping cart" hide-back-button="true">
+
+  <ion-nav-buttons side="right">
+    <button class="button button-positive" ui-sref="app.shop">TO SHOP</button>
+  </ion-nav-buttons>
+  
+  <!-- we use a subheader component to show total and links to checkout and shop-->
+  <div class="bar bar-subheader bar-positive white-color">
+    
+    <h4 class="title">{{cart.products.length }} items ({{getTotal(cart)}} $)</h4>
+    
+  </div>     
+  
+  <ion-content class="has-header has-subheader has-footer">
+    <div class="item item-divider" ng-if="cart.products.length">Swipe to remove items</div>
+    <div class="text-center" style="padding-top:40px;" ng-if="!cart.products.length">
+      <h2 class="sans-pro-light">Your cart is empty</h2>
+      <div class="button button-outline button-energized button-deepblue-white" ui-sref="app.shop">Back to shop</div>  
+    </div>
+    
+    <!-- 
+      #IMPLEMENTATION-DETAIL:
+      we are using a swipeable list to give an interface to remove products 
+      from the cart. This is done by binding the "can-swipe" attribute of an
+      "ion-list" to true. 
+    -->  
+    <ion-list can-swipe="true">  
+      <ion-item class="item item-avatar" ng-repeat="product in cart.products track by $index" >
+        <!-- 
+          #IMPLEMENTATION-DETAIL:
+          we are using our custom classes here.
+          see file scss/views.scss for implementation
+        -->
+        <img ng-src="{{product.image}}" alt="">
+        <h2 class="title white-cxolor">{{product.title}}</h2>
+        <p>{{product.price}} $</p>
+        
+        <!--
+          #TIP: <ion-option-button> must be put into an <ion-item> and is visible only when our list is swiped. You can add more than one button here.
+        -->  
+        <ion-option-button class="button-assertive" ng-click="dropProduct($index)">REMOVE</ion-option-button>
+      
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+  <!-- in case we have items, explain how to remove them in footer --> 
+  <ion-footer-bar class="bar" ng-class="{'bar-energized' : cart.products.length , 'bar-deepblue' : !cart.products.length}" ui-sref="{{ cart.products.length  ? 'app.checkout' : '#' }}">   
+    <h2 class="title" ng-if="cart.products.length">Checkout</h2>
+  </ion-footer-bar>
+   
+</ion-view>

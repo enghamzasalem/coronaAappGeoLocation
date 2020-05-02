@@ -1,0 +1,123 @@
+<ion-view view-title="Home" hide-back-button="true" data-ng-init="init()">
+  <ion-content>
+    <!-- <div class="card list">
+      <div class="item item-avatar">
+        <img src="img/dosing.png" />
+        <h2>Dosing Value per Day</h2>
+      </div>
+      <div class="">
+        <div class="row list list-inset">
+          <div class="col col-50">
+            <label class="item item-input">
+              <span class="input-label">From</span>
+              <input
+                type="date"
+                ng-model="date_from"
+                ng-change="changedate(date_from,date_to)"
+              />
+            </label>
+          </div>
+          <div class="col col-50">
+            <label class="item item-input">
+              <span class="input-label">To</span>
+              <input
+                type="date"
+                ng-model="date_to"
+                ng-change="changedate(date_from,date_to)"
+              />
+            </label>
+          </div>
+        </div>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Change X Label
+          </div>
+          <select
+            id="category"
+            ng-model="category"
+            ng-change="changeLabel(category)"
+          >
+            <option value="time">Time</option>
+            <option value="date" selected>Date</option
+            ><option value="category">Category</option>
+          </select>
+        </label>
+      </div>
+      <div class="item item-text-wrap">
+        <center ng-if="!data.length">
+          <h1>
+            <br />
+            No Data Avalabile
+          </h1>
+        </center>
+
+        <canvas
+          id="line"
+          class="chart chart-line"
+          chart-data="data"
+          chart-labels="labels"
+          chart-series="series"
+          chart-options="options"
+          chart-dataset-override="datasetOverride"
+          chart-click="onClick"
+        >
+        </canvas>
+      </div>
+    </div> -->
+    <!-- {{center}} -->
+
+    <ng-map   zoom="13" style="height: 400px;">
+      <marker position="{{center}}" title="hello"></marker>
+
+      <shape
+        name="circle"
+        ng-repeat="city in cities"
+        no-watcher="true"
+        stroke-color="#FF0000"
+        stroke-opacity="0.8"
+        stroke-weight="2"
+        fill-color="#FF0000"
+        fill-opacity="0.35"
+        center="{{city.position}}"
+        radius="{{getRadius(city.population)}}"
+      >
+      </shape>
+    </ng-map>
+    <center>
+      <p></p>
+      <button
+        class="button button-large button-energized button-deepblue-white button-outline"
+        ng-click="track()"
+      >
+        Percentage
+      </button>
+      <button
+        class="button button-large button-energized button-deepblue-white button-outline"
+        ng-click="setCenter()"
+      >
+        <i class="icon ion-ios-location"></i>
+      </button>
+      <h1>{{percentage()}} /10</h1>
+      <h3>{{note}}</h3>
+      <h4>
+      This number represent the chances of getting COVID 19 depend on your current location and our Algorithm.
+      </h4>
+      <ul style="text-align: left;padding: 10px;list-style-type:square">
+       <li>10 : You are in dangerous area.
+        </li>
+        <li>5 : you had been in a dangerous area, take the test for
+        your Safety .</li>
+        <li> < 3 : Your area now is safe; be careful .
+        </li>
+      </p>
+    </center>
+
+    <!-- <div class="card list">
+      <label class="item item-input" ng-repeat="p in ArrayofLocation">
+        <a ng-href="https://www.google.com/maps/@{{p.lat}},{{p.Lng}},16.25z">
+          {{p.lat}},{{p.Lng}}
+        </a></label
+      >
+    </div> -->
+  </ion-content>
+</ion-view>

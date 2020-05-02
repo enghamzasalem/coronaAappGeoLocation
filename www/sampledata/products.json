@@ -1,0 +1,31 @@
+[
+    {
+        "id" : 1,
+        "title" : "Super covers",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, nesciunt hic aut? Saepe nihil autem nesciunt, ab quisquam animi, aperiam fugit? Ut velit a, in perspiciatis error inventore. Dolorum, eligendi.",
+        "image" : "sampledata/products/1.jpg",
+        "price" : 10
+    },
+    {
+        "id" : 2,
+        "title" : "Vintage Camera",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, nesciunt hic aut? Saepe nihil autem nesciunt, ab quisquam animi, aperiam fugit? Ut velit a, in perspiciatis error inventore. Dolorum, eligendi.",
+        "image" : "sampledata/products/2.jpg",
+        "price" : 100
+    },
+    {
+        "id" : 3,
+        "title" : "Vintage Watch",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, nesciunt hic aut? Saepe nihil autem nesciunt, ab quisquam animi, aperiam fugit? Ut velit a, in perspiciatis error inventore. Dolorum, eligendi.",
+        "image" : "sampledata/products/3.jpg",
+        "price" : 200
+    },
+    {
+        "id" : 4,
+        "title" : "Magic Glasses",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, nesciunt hic aut? Saepe nihil autem nesciunt, ab quisquam animi, aperiam fugit? Ut velit a, in perspiciatis error inventore. Dolorum, eligendi.",
+        "image" : "sampledata/products/4.jpg",
+        "price" : 85
+    }
+
+]

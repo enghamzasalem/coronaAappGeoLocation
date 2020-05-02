@@ -1,0 +1,40 @@
+<!--
+  #TIP: in this case we hide the navbar provided by navigation system.
+-->
+<ion-view hide-nav-bar="true">
+  <!-- in our custom header bar we give a link to start screen -->
+  <ion-header-bar class="bar bar-deepblue bar-deepblue-borderbottom">
+    <button
+      ui-sref="app.start"
+      class="button button-clear button-deepblue-white"
+    >
+      <i class="white-color ion-arrow-left-c"></i>
+    </button>
+    <h2 class="title">Login</h2>
+  </ion-header-bar>
+
+  <ion-content class="has-header has-footer padding full-height text-center">
+    <h3 class="sans-pro-light">Enter your credentials</h3>
+    <label class="item item-input">
+      <input type="text" placeholder="email" ng-model="email" />
+    </label>
+    <label class="item item-input">
+      <input type="password" placeholder="password" ng-model="password" />
+    </label>
+    <!--
+      #SIMPLIFIED-IMPLEMENTATION:
+      login just sets an user! (see controllers.js for more)
+    -->
+    <button class="button button-block button-positive" ng-click="login(email, password)">
+      LOGIN
+    </button>
+  </ion-content>
+
+  <!-- we put the forgot password link in the footer -->
+  <ion-footer-bar
+    class="bar bar-deepblue bar-deepblue-bordertop pointer"
+    ui-sref="app.forgot"
+  >
+    <h1 class="title sans-pro-light">Forgot password?</h1>
+  </ion-footer-bar>
+</ion-view>

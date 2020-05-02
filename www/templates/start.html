@@ -1,0 +1,47 @@
+<!--
+  #TIP: in this case we hide the navbar provided by navigation system.
+-->
+<ion-view hide-nav-bar="true">
+  <!-- 
+    #IMPLEMENTATION-DETAIL
+    We are using custom classes in "scss/scaffolding.scss"
+  -->
+  <ion-content class="padding full-height">
+    <h1 class="text-center white-color home-title">
+    COVID 19 Personal Tracker 
+
+    <h3 class="white-color text-center sans-pro-light">
+      Protect YourSelf and EveryOne <br />
+      <img class="ion-ios-ionic-outline" src="img/ionic.png" width="50%" />
+    </h3>
+
+    <!--
+      #IMPLEMENTATION-DETAIL:
+      we are wrapping the login button in an ionic grid in order
+      to keep it centered and quite large
+    -->
+
+    <div class="row">
+      <div class="col col-20"></div>
+      <div class="col">
+        <button
+          class="button button-large button-positive button-block"
+          ui-sref="app.login"
+        >
+          LOGIN
+        </button>
+      </div>
+      <div class="col col-20"></div>
+    </div>
+  </ion-content>
+
+  <!--
+   We put a link to signup screen in footer bar.
+  -->
+  <ion-footer-bar
+    ui-sref="app.signup"
+    class="bar bar-positive bar-deepblue-bordertop pointer"
+  >
+    <h1 class="title sans-pro-light">Signup here</h1>
+  </ion-footer-bar>
+</ion-view>

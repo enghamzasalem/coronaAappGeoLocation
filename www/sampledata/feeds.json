@@ -1,0 +1,24 @@
+[
+    {
+        "id" : 1,
+        "title" : "Good News",
+        "date" : "August 05, 2015",
+        "image" : "sampledata/images/1.jpg",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam nihil quidem illo, sint sapiente cumque, vero amet deserunt, accusantium, recusandae voluptatem hic repellendus libero esse odit. Qui molestiae dolorum iusto."
+    },
+    {
+        "id" : 2,
+        "title" : "Check out this",
+        "date" : "August 15, 2015",
+        "image" : "sampledata/images/2.jpg",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam nihil quidem illo, sint sapiente cumque, vero amet deserunt, accusantium, recusandae voluptatem hic repellendus libero esse odit. Qui molestiae dolorum iusto."
+    },
+    {
+        "id" : 3,
+        "title" : "Another happening",
+        "date" : "August 3, 2015",
+        "image" : "sampledata/images/3.jpg",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam nihil quidem illo, sint sapiente cumque, vero amet deserunt, accusantium, recusandae voluptatem hic repellendus libero esse odit. Qui molestiae dolorum iusto."
+    }
+
+]

@@ -1,0 +1,86 @@
+<!-- 
+  #IMPLEMENTATION-DETAIL:
+  this view is our top one and uses ion-side-menus component.
+  In case of views where we want to hide the menu, we'll hide the 
+  navigation bar provided here.
+  #TIP: enable-menu-with-back-views="true" is set to true to show the menu opening control in all views by default.
+-->
+<ion-side-menus enable-menu-with-back-views="true">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-deepblue">
+      <!-- #TIP: <ion-nav-back-button> is commented out in this example,
+        uncomment if you need a back button in some views.
+      -->
+      <!--
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+      -->
+      <ion-nav-buttons side="left">
+        <button
+          class="white-color button button-icon button-clear ion-navicon"
+          menu-toggle="left"
+        ></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <ion-nav-view name="menuContent" class="slide-left-right"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <!--
+      #IMPLEMENTATION-DETAIL:
+      we are using our custom bar classes here
+      see scss/themed.scss for implementation.
+    -->
+    <ion-header-bar class="bar-deepblue-reverse bar-deepblue-borderbottom">
+    </ion-header-bar>
+
+    <ion-content>
+      <ion-list>
+        <!-- #TIP: 
+          Menu items are wrapped In the following <ion-list>. 
+          Each one has attribute "menu-close" set in order to automatically close side menu on click 
+        -->
+        <ion-item
+          menu-close
+          href="#/app/account"
+          class="item-menu-avatar text-center"
+        >
+          <img
+            ng-src="{{userProfile.photo}}"
+            width="150px"
+            class="avatar-menu"
+          />
+        </ion-item>
+        <ion-item
+          menu-close
+          class="menu-positive text-center"
+          href="#/app/account"
+        >
+          <b> {{ userProfile.name.given }} {{ userProfile.name.family }} </b>
+        </ion-item>
+        <ion-item menu-close href="#/app/feed">
+          Home
+        </ion-item>
+        <ion-item menu-close href="#/app/measure">
+          Add Your Test Result
+        </ion-item>
+      </ion-list>
+    </ion-content>
+
+    <!-- 
+      #IMPLEMENTATION-DETAIL:
+      we choose to put a "logout" button in the footer of side menu.
+      the "logout" method in contained in "AppCtrl" controller (see controllers.js)
+    -->
+    <ion-footer-bar class="bar-positive">
+      <button
+        class="button button-clear white-color"
+        ng-click="logout()"
+        menu-close
+      >
+        Logout
+      </button>
+    </ion-footer-bar>
+  </ion-side-menu>
+</ion-side-menus>

@@ -1,0 +1,59 @@
+{
+  "entry": [
+    {
+      "resource": {
+        "birthDate": "1970-01-01",
+        "gender": "female",
+        "id": "PATIENT_ID",
+        "name": [
+          {
+            "family": "Smith",
+            "given": ["Darcy"],
+            "use": "official"
+          }
+        ],
+        "resourceType": "Patient"
+      }
+    },
+    {
+      "resource": {
+        "class": {
+          "code": "IMP",
+          "display": "inpatient encounter",
+          "system": "http://hl7.org/fhir/v3/ActCode"
+        },
+        "id": "ENCOUNTER_ID",
+        "reason": [
+          {
+            "text": "The patient had an abnormal heart rate. She was concerned about this."
+          }
+        ],
+        "resourceType": "Encounter",
+        "status": "finished",
+        "subject": {
+          "reference": "Patient/PATIENT_ID"
+        }
+      }
+    },
+    {
+      "resource": {
+        "context": {
+          "reference": "Encounter/ENCOUNTER_ID"
+        },
+        "effectiveDateTime": "2018-01-01T00:00:00+00:00",
+        "id": "OBSERVATION_ID",
+        "resourceType": "Observation",
+        "status": "final",
+        "subject": {
+          "reference": "Patient/PATIENT_ID"
+        },
+        "valueQuantity": {
+          "unit": "bpm",
+          "value": BPM_VALUE
+        }
+      }
+    }
+  ],
+  "resourceType": "Bundle",
+  "type": "searchset"
+}

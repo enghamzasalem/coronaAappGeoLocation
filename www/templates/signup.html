@@ -1,0 +1,75 @@
+<!--
+  #TIP: in this case we hide the navbar provided by navigation system.
+-->
+<ion-view hide-nav-bar="true">
+  <ion-header-bar class="bar bar-deepblue bar-deepblue-borderbottom">
+    <button
+      ui-sref="app.start"
+      class="button button-clear button-deepblue-white"
+    >
+      <i class="white-color ion-arrow-left-c"></i>
+    </button>
+    <h2 class="title">Signup</h2>
+  </ion-header-bar>
+
+  <ion-content class="has-header has-footer padding full-height text-center">
+    <div style="padding-top:50px;">
+      <h3 class="sans-pro-light">Please provide this information</h3>
+
+      <label class="item item-input">
+        <input type="text" placeholder="Your name" ng-model="name" />
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Your Family" ng-model="family" />
+      </label>
+      <label class="item item-input">
+        <input
+          type="date"
+          placeholder="Your Birth Of Date"
+          ng-model="birthDate"
+        />
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Gender
+        </div>
+        <select ng-model="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+          <option value="unknown">Unknown</option>
+        </select>
+      </label>
+
+      <label class="item item-input">
+        <input type="email" placeholder="Email" ng-model="email" />
+      </label>
+      <label class="item item-input">
+        <input type="password" placeholder="Password" ng-model="password" />
+      </label>
+      <label class="item item-input">
+        <input
+          type="password"
+          required
+          ng-model="confirmPassword"
+          ng-blur="validatePass(confirmPassword,password)"
+          placeholder="Repeat password"
+        />
+      </label>
+      <button
+        class="button button-block button-energized"
+        ng-click="signUp(name,family,birthDate,gender,email,password,confirmPassword)"
+      >
+        SIGNUP
+      </button>
+    </div>
+  </ion-content>
+
+  <!-- we provide a link back to login in footer bar -->
+  <ion-footer-bar
+    class="bar bar-deepblue bar-deepblue-bordertop pointer"
+    ui-sref="app.login"
+  >
+    <h1 class="title sans-pro-light">Login</h1>
+  </ion-footer-bar>
+</ion-view>

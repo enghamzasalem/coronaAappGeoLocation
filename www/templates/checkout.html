@@ -1,0 +1,21 @@
+<ion-view view-title="Checkout">
+  <ion-content class="padding text-center">
+    <h2 class="white-color sans-pro-light" style="margin-top:50px;">
+      Complete checkout
+    </h2>
+    <h3 class="white-color sans-pro-light">
+      Total due: {{getTotal(cart)}} $
+    </h3>
+    <!--
+        #IMPLEMENTATION-DETAIL:
+        using custom class 'button-deepblue-white button-outline'.
+        see scss/scaffolding.scss for implementation.
+    -->
+    <button
+      ng-click="checkout()"
+      class="button button-energized button-deepblue-white button-outline"
+    >
+      PROCEED TO PAYMENT
+    </button>
+  </ion-content>
+</ion-view>

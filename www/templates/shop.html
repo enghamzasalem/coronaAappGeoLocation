@@ -1,0 +1,38 @@
+<ion-view view-title="Shop" hide-back-button="true">
+
+    <ion-nav-buttons side="right">
+    <span ui-sref="app.cart" >
+      <button class="button button-clear icon ion-android-cart white-color">
+        
+      </button>
+      <span ng-show="cart.products.length" class="cart-badge ng-hide">{{cart.products.length}}</span>
+    </span>
+    </ion-nav-buttons>
+
+  <ion-content>
+
+    <div ng-repeat="product in products">
+  
+      <div class="item item-image" style="position:relative;">
+        <img ng-src="{{product.image}}">
+        <button class="button button-positive product-price" ng-click="addProduct(product)">
+            <p class="white-color product-price-price">$ <b>{{product.price}}</b></p>
+            <p class="white-color product-price-text">
+                <i class="ion-android-cart"></i> <span>Buy now</span>
+            </p>  
+        </button> 
+    
+      </div>
+
+      <div class="item ui-gradient-deepblue">
+        <h1 class="title white-color sans-pro-light">{{product.title}}</h1>
+      </div>
+
+      <div class="item item-body">
+        {{product.description}}
+      </div>
+    </div>
+
+    
+  </ion-content>
+</ion-view>

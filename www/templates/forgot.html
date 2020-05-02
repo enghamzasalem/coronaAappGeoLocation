@@ -1,0 +1,42 @@
+<!--
+  #TIP: in this case we hide the navbar provided by navigation system.
+-->
+<ion-view hide-nav-bar="true">
+  <ion-header-bar class="bar bar-deepblue bar-deepblue-borderbottom">
+    <h2 class="title">Password recover</h2>
+  </ion-header-bar>
+
+  <ion-content class="has-header has-footer padding full-height text-center">
+    <div style="padding-top:50px;">
+      <h3 class="sans-pro-light">
+        Please enter your email to reset the password
+      </h3>
+
+      <label class="item item-input">
+        <input type="email" placeholder="email" ng-model="email" />
+      </label>
+
+      <!--
+       #NOT-IMPLEMENTED:
+       the button does nothing, implementation is up to you!
+      -->
+      <button
+        class="button button-block button-energized"
+        ng-click="forget(email)"
+      >
+        RESET PASSWORD
+      </button>
+    </div>
+  </ion-content>
+
+  <!--
+    #IMPLEMENTATION-DETAIL:
+    we put a link to login in the footer.
+  -->
+  <ion-footer-bar
+    class="bar bar-deepblue bar-deepblue-bordertop pointer"
+    ui-sref="app.login"
+  >
+    <h1 class="title sans-pro-light">Back to login</h1>
+  </ion-footer-bar>
+</ion-view>
